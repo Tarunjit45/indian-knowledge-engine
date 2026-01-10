@@ -1,0 +1,24 @@
+Hardcoded base: https://www.indiacode.nic.in/
+Targeting 10 acts from India Code (only)
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|#         | 1/10 [00:01<00:11,  1.26s/it] 20%|##        | 2/10 [00:02<00:09,  1.13s/it] 30%|###       | 3/10 [00:03<00:07,  1.14s/it] 40%|####      | 4/10 [00:04<00:07,  1.17s/it] 50%|#####     | 5/10 [00:05<00:05,  1.18s/it] 60%|######    | 6/10 [00:07<00:04,  1.21s/it] 70%|#######   | 7/10 [00:08<00:03,  1.18s/it] 80%|########  | 8/10 [00:09<00:02,  1.19s/it] 90%|######### | 9/10 [00:10<00:01,  1.15s/it]100%|##########| 10/10 [00:11<00:00,  1.11s/it]100%|##########| 10/10 [00:11<00:00,  1.15s/it]
+Searching for Information Technology Act 2000
+Failed to fetch Information Technology Act 2000 404 Client Error: Not Found for url: https://www.indiacode.nic.in/search?q=Information+Technology+Act+2000
+Searching for Indian Penal Code 1860
+Failed to fetch Indian Penal Code 1860 404 Client Error: Not Found for url: https://www.indiacode.nic.in/search?q=Indian+Penal+Code+1860
+Searching for Code of Criminal Procedure 1973
+Failed to fetch Code of Criminal Procedure 1973 404 Client Error: Not Found for url: https://www.indiacode.nic.in/search?q=Code+of+Criminal+Procedure+1973
+Searching for Indian Evidence Act 1872
+Failed to fetch Indian Evidence Act 1872 404 Client Error: Not Found for url: https://www.indiacode.nic.in/search?q=Indian+Evidence+Act+1872
+Searching for Indian Contract Act 1872
+Failed to fetch Indian Contract Act 1872 404 Client Error: Not Found for url: https://www.indiacode.nic.in/search?q=Indian+Contract+Act+1872
+Searching for Companies Act 2013
+Failed to fetch Companies Act 2013 404 Client Error: Not Found for url: https://www.indiacode.nic.in/search?q=Companies+Act+2013
+Searching for Transfer of Property Act 1882
+Failed to fetch Transfer of Property Act 1882 404 Client Error: Not Found for url: https://www.indiacode.nic.in/search?q=Transfer+of+Property+Act+1882
+Searching for Limitation Act 1963
+Failed to fetch Limitation Act 1963 404 Client Error: Not Found for url: https://www.indiacode.nic.in/search?q=Limitation+Act+1963
+Searching for Negotiable Instruments Act 1881
+Failed to fetch Negotiable Instruments Act 1881 404 Client Error: Not Found for url: https://www.indiacode.nic.in/search?q=Negotiable+Instruments+Act+1881
+Searching for Goods and Services Tax Act 2017
+Failed to fetch Goods and Services Tax Act 2017 404 Client Error: Not Found for url: https://www.indiacode.nic.in/search?q=Goods+and+Services+Tax+Act+2017
+Done. Raw JSONs saved under C:\indian-knowledge-engine\data\raw
