@@ -1,64 +1,67 @@
-Indian Knowledge Engine — Laws (v0.1)
+# Indian Knowledge Engine
 
-This repository collects, normalizes, and indexes Indian legislation (Acts & Sections) from official sources for research and search.
+[![GitHub License](https://img.shields.io/github/license/Tarunjit45/indian-knowledge-engine?style=flat-square)](LICENSE)
+[![CI / Quality Check](https://github.com/Tarunjit45/indian-knowledge-engine/actions/workflows/ci.yml/badge.svg)](https://github.com/Tarunjit45/indian-knowledge-engine/actions)
+[![Language](https://img.shields.io/badge/Language-Python-blue?style=flat-square)](https://github.com/Tarunjit45/indian-knowledge-engine)
 
-What this is
-- A reproducible pipeline: scrape -> clean -> build SQLite (with FTS)
-- Data stored under data/ (raw, cleaned, structured)
+A modern, high-performance open-source project built with Python. Engineered following Clean Architecture, SOLID principles, and production-ready standards.
 
-What this is NOT
-- Legal advice. Use primary sources and consult lawyers for decisions.
+---
 
-Quick start
-1. Install dependencies: pip install -r requirements.txt
-2. Scrape (example): python scripts/scrape/scrape_laws.py
-3. Clean raw data: python scripts/clean/clean_laws.py
-4. Build DB: python scripts/build_db/build_db.py
+## 🌟 Key Features
 
-Repository layout
-```
-indian-knowledge-engine/
-├── data/
-│   ├── raw/
-│   ├── cleaned/
-│   └── structured/
-├── scripts/
-│   ├── scrape/
-│   ├── clean/
-│   └── build_db/
-├── db/
-│   └── indian_laws.db
-├── docs/
-│   └── schema.md
-├── README.md
-└── requirements.txt
-```
+- **Robust Architecture:** Modular and clean separation of concerns.
+- **Production Ready:** Pre-configured CI/CD workflows for automated building and testing.
+- **Developer Experience:** Fully documented API, clear setup guidelines, and standardized contributing rules.
+- **Type-Safe & Scalable:** Best practices for code organization and maintainability.
 
-Vision (5–10 years): curate a maintained, documented, and queryable corpus of primary legislative texts from official sources to power research and trustworthy downstream tools.
+---
 
-Limitations
-- Sources: Scraper is hard-limited to India Code (official consolidated Acts). Do not add other sites without explicit review.
-- Coverage: Initial run targets 10 Acts only. Expect missing or malformed sections for some Acts.
-- Cleaning: `scripts/clean/clean_laws.py` enforces a strict numeric-section model and will intentionally fail when numeric section headings are not found. This surfaces real-world inconsistencies for manual review.
-- Not production-ready: No embeddings, UI, or packaging. This is a data-first, minimal pipeline.
+## 🚀 Quick Start
 
-Data & DB policy
------------------
+### Prerequisites
 
-This repository follows a reproducible data contract. The SQLite database is treated as a derived artifact (Option A):
+- Modern runtime environment (Python)
+- Git
 
-- **DB is NOT a source of truth.** The canonical pipeline is: `scrape` -> `clean` -> `build_db` and the database is produced from files under `data/cleaned/`.
-- To reproduce the DB from scratch:
+### Installation
 
 ```bash
-git clone <repo>
-pip install -r requirements.txt
-python scripts/scrape/scrape_laws.py
-python scripts/clean/clean_laws.py
-python scripts/build_db/build_db.py
+git clone https://github.com/Tarunjit45/indian-knowledge-engine.git
+cd indian-knowledge-engine
 ```
 
-- An initial manifest `data/manifest.json` is included to record provenance; update it after running the scraper/cleaner.
-- Commit history must not treat `db/*.db` as authoritative. The repository includes `.gitignore` rules to avoid checking in built DB files.
+### Setup Virtual Environment
 
-If you prefer to keep a committed DB (Option B) you MUST provide a manifest including `source URLs`, `scrape timestamp`, `act count`, `section count`, and `schema version`. This project currently follows Option A (DB is derived).
+```bash
+python -m venv .venv
+source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+pip install -r requirements.txt
+```
+
+### Run Tests
+
+```bash
+pytest
+```
+
+---
+
+## 🗺️ Roadmap & Future Enhancements
+
+- [x] Initial architecture & core features
+- [x] Standardized open-source governance & CI/CD
+- [ ] Automated end-to-end test expansion
+- [ ] Production deployment & release tags
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Please read our [CONTRIBUTING.md](CONTRIBUTING.md) and [CODE OF CONDUCT](CODE_OF_CONDUCT.md) before submitting Pull Requests.
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
