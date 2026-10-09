@@ -1,71 +1,80 @@
-# 🚀 indian-knowledge-engine
+# 🇮🇳 Indian Knowledge Engine — Cultural & Historical Knowledge Indexer
 
-![Language](https://img.shields.io/badge/Language-Python-blue?style=for-the-badge)
-![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
-![Status](https://img.shields.io/badge/Production-Active-success?style=for-the-badge)
+[![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
+[![BeautifulSoup](https://img.shields.io/badge/Scraper-BeautifulSoup4-388E3C?style=for-the-badge)](https://pypi.org/project/beautifulsoup4/)
+[![PDF Parsing](https://img.shields.io/badge/Parsing-PDFMiner.six-FF6F00?style=for-the-badge)](https://pypi.org/project/pdfminer.six/)
+[![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
 
-## 📌 Overview
+An automated ingestion, cleaning, and indexing pipeline designed to extract, sanitize, and structure knowledge from Indian historical archives, cultural encyclopedias, and open governmental publications.
 
-A high-performance application engineered by Tarunjit Biswas for quality and scalability.
+---
 
-## ✨ Key Features & Architecture
+## 📌 Architecture & ETL Pipeline
 
-- **High-Performance Codebase:** Built using `Python` and modern engineering principles.
-- **Modular & Scalable Design:** Structured directory tree for seamless development and deployment.
+```
+[ Cultural Portals, Archives & PDF Gazettes ]
+                      |
+                      v  `scripts/scrape/`
++-------------------------------------------------------------+
+|                     1. Scraper Module                       |
+|        BeautifulSoup4 web scrapers & PDFMiner.six extractors|
++-------------------------------------------------------------+
+                      |
+                      v  `scripts/clean/`
++-------------------------------------------------------------+
+|                     2. Cleaning & Sanitization              |
+|        Regex normalization, script transliteration, dedup   |
++-------------------------------------------------------------+
+                      |
+                      v  `scripts/build_db/`
++-------------------------------------------------------------+
+|                     3. Database Builder                     |
+|        Constructs structured SQLite index & embeddings      |
++-------------------------------------------------------------+
+```
 
-## 🛠️ Tech Stack & Dependencies
+---
 
-- **Core Language:** `Python`
-- **Libraries & Tools:** Python
-- **Deployment Infrastructure:** Vercel Edge / Cloud Services
-
-## 📁 Architecture & File Layout
+## 📁 Repository Structure
 
 ```text
 indian-knowledge-engine/
-├── .github
-├── .github/ISSUE_TEMPLATE
-├── .github/ISSUE_TEMPLATE/bug_report.md
-├── .github/ISSUE_TEMPLATE/feature_request.md
-├── .github/PULL_REQUEST_TEMPLATE.md
-├── .github/workflows
-├── .github/workflows/ci.yml
-├── .gitignore
-├── CODE_OF_CONDUCT.md
-├── CONTRIBUTING.md
-├── LICENSE
-├── README.md
-├── build.log
-├── clean.log
-├── data
-└── ... [additional codebase files]
+├── scripts/
+│   ├── scrape/         # Web crawlers & document extraction workers
+│   ├── clean/          # Text sanitization, encoding normalization & deduplication
+│   └── build_db/       # SQLite schema builder & search indexer
+├── data/               # Raw and processed text repositories
+├── docs/               # Architecture guidelines and data schemas
+├── requirements.txt    # Dependencies (requests, beautifulsoup4, pdfminer.six, tqdm, lxml)
+├── LICENSE             # MIT License
+└── README.md
 ```
 
-## 🚀 Quickstart & Installation
+---
 
-### Prerequisites
-- Python 3.9+
-- pip package manager
+## 🚀 Getting Started
 
-### Setup Instructions
+### 1. Installation
+```bash
+git clone https://github.com/Tarunjit45/indian-knowledge-engine.git
+cd indian-knowledge-engine
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/Tarunjit45/indian-knowledge-engine.git
-   cd indian-knowledge-engine
-   ```
+pip install -r requirements.txt
+```
 
-2. **Install dependencies:**
-   ```bash
-   pip install -r requirements.txt
-   ```
+### 2. Execute Data Pipeline
+```bash
+# Run web & document extraction
+python scripts/scrape/main.py
 
-3. **Execute application:**
-   ```bash
-   python main.py
-   ```
+# Clean extracted text corpora
+python scripts/clean/sanitize.py
 
-## 📜 Author & License
+# Build search database
+python scripts/build_db/build.py
+```
 
-Architected & Developed by **[Tarunjit Biswas](https://github.com/Tarunjit45)**.  
-Distributed under the **MIT License**.
+---
+
+## 📄 License
+This project is licensed under the [MIT License](LICENSE).
